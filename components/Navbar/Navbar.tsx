@@ -3,8 +3,8 @@ import React from "react"
 
 export default function Navbar() {
   return (
-    <nav className="border-b sticky top-0">
-      <div className="max-w-[1400px] m-auto py-5 flex justify-between items-center">
+    <nav className="border-b sticky top-0 px-5 backdrop-blur">
+      <div className="max-w-[1400px] m-auto py-4 flex justify-between items-center">
         <div>
           <span className="text-2xl text-primary uppercase tracking-[3px]">
             Coinify
