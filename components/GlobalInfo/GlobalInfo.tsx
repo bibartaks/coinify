@@ -5,12 +5,19 @@ import globalCoinsFetcher from "@/lib/globalCoinsFetcher"
 import priceFormator from "@/app/utilities/priceFormator"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Chart from "../Chart/Chart"
+import GlobalChart from "../GlobalChart/GlobalChart"
 
 export default async function GlobalInfo() {
   const data = await globalCoinsFetcher(
     "https://api.coingecko.com/api/v3/global"
   )
 
+  const chartData = await globalCoinsFetcher(
+    "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily"
+  )
+
+  console.log(chartData)
   function calculateTotalMarketCap(data) {
     let total = 0
     for (const key in data) {
@@ -21,16 +28,16 @@ export default async function GlobalInfo() {
     return priceFormator(total)
   }
   return (
-    <div className="max-w-[1400px] m-auto">
-      <h3
-        className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
-      >
-        Global info :
-      </h3>
-
-      <Card className="px-5 py-5">
+    <div className="max-w-[1400px] m-auto flex justify-between  gap-5">
+      <Card className="px-5 py-5 w-[100%]">
+        <h3
+          className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
+        >
+          Global info :
+        </h3>
         <h2 className="text-[1.2rem] mb-2">
-          📈 Total Active Cryptocurrencies : {data.data.active_cryptocurrencies}
+          📈 Total Active Cryptocurrencies :{" "}
+          {data.data.active_cryptocurrencies.toLocaleString()}
         </h2>
         <h3 className="text-[1.2rem] mb-5">
           🌏 Markets Tracked: {data.data.markets}
@@ -109,6 +116,14 @@ export default async function GlobalInfo() {
             </Card>
           </TabsContent>
         </Tabs>
+      </Card>
+      <Card className="w-[100%] px-4 py-4">
+        <h3
+          className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
+        >
+          Bitcoin Chart :
+        </h3>
+        <GlobalChart />
       </Card>
     </div>
   )
