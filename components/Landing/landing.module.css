@@ -1,0 +1,38 @@
+.landingText {
+  background: linear-gradient(
+    90deg,
+    red,
+    #ff8400 22%,
+    #ff117c 50%,
+    #4e1dff 79%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: animatedgradient-data-v-8f0268f0 3s ease infinite alternate;
+  animation: animatedgradient-data-v-8f0268f0 3s ease infinite alternate;
+  font-size: 3rem;
+  font: bold;
+}
+
+.landingBtn {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: white;
+  border: 2px double transparent;
+  background-image: linear-gradient(#0d0e21, #0d0e21),
+    radial-gradient(circle at left top, #016eda, #d900c0);
+  background-origin: border-box;
+  /* font-weight: lighter; */
+  letter-spacing: 2px;
+  margin-top: 1rem;
+  background-clip: padding-box, border-box;
+  transition: 0.4s all linear;
+}
+
+.landingBtn:hover {
+  box-shadow: 1px 1px 20px #d900c0;
+}
