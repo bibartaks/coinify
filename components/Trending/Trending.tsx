@@ -21,7 +21,9 @@ export default async function Trending() {
 
   return (
     <div className="max-w-[1400px] m-auto py-10">
-      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-5">
+      <h3
+        className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
+      >
         Trending coins in last 24 hours:
       </h3>
 

@@ -18,6 +18,9 @@ export default function Navbar() {
             <li className="mr-10 hover:opacity-[0.9] ">
               <Link href="home">Home</Link>
             </li>
+            <li className="mr-10 hover:opacity-[0.9] ">
+              <Link href="home">Global info</Link>
+            </li>
             <li className="mr-10 hover:opacity-[0.9]">
               <Link href="home">Market</Link>
             </li>
