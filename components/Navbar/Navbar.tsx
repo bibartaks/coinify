@@ -15,14 +15,14 @@ export default function Navbar() {
         </div>
         <div>
           <ul className={`${montserrat.className} flex`}>
-            <li className="mr-10 hover:opacity-[0.9]">
+            <li className="mr-10 hover:opacity-[0.9] ">
               <Link href="home">Home</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
               <Link href="home">Market</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
-              <Link href="home">Join Now</Link>
+              <Link href="home">Trending Coins</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
               <Link href="home">Contact Us</Link>
