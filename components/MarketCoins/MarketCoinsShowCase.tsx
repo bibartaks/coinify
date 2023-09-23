@@ -55,7 +55,9 @@ export default function MarketCoinsShowCase({ data, error, isLoading }: any) {
     <Card className={`max-w-[1400px] m-auto py-10 `}>
       <div className="flex items-center justify-between pb-5">
         <div>
-          <h3 className="scroll-m-20 px-5 text-2xl font-semibold tracking-tight ">
+          <h3
+            className={`scroll-m-20 px-5 text-2xl font-semibold tracking-tight ${montserrat.className}`}
+          >
             Market update
           </h3>
         </div>
