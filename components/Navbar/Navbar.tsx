@@ -3,6 +3,15 @@ import React from "react"
 import { montserrat, righteous } from "@/app/utilities/fonts"
 import { Button } from "../ui/button"
 import Search from "../Search/Search"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@radix-ui/react-dropdown-menu"
+import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
 export default function Navbar() {
   return (
@@ -15,7 +24,7 @@ export default function Navbar() {
             Coinify
           </span>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <ul className={`${montserrat.className} flex items-center`}>
             <li className="mr-10 hover:opacity-[0.9] ">
               <Link href="/">Home</Link>
@@ -41,6 +50,9 @@ export default function Navbar() {
               <Search />
             </li>
           </ul>
+        </div>
+        <div className="block lg:hidden xl:hidden">
+          <MobileNavbar />
         </div>
       </div>
     </nav>

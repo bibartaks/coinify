@@ -136,21 +136,26 @@ export default function MarketCoinsShowCase({ data, error, isLoading }: any) {
                     </td>
                     <td className="text-left py-4  pl-5 border-b border-secondary">
                       <div className="flex items-center">
-                        <div className="mr-2">
-                          <Avatar>
-                            <AvatarImage width={30} src={coin.image} />
-                            <AvatarFallback>
-                              <Skeleton className="w-[40px] h-[40px] rounded-full " />
-                            </AvatarFallback>
-                          </Avatar>
-                        </div>
-                        <div>
-                          {coin.name}{" "}
-                          <span className="text-gray-400">
-                            {" "}
-                            ({coin.symbol})
-                          </span>
-                        </div>
+                        <Link
+                          href={`coins/${coin.id}`}
+                          className="flex items-center"
+                        >
+                          <div className="mr-2">
+                            <Avatar>
+                              <AvatarImage width={30} src={coin.image} />
+                              <AvatarFallback>
+                                <Skeleton className="w-[40px] h-[40px] rounded-full " />
+                              </AvatarFallback>
+                            </Avatar>
+                          </div>
+                          <div>
+                            {coin.name}{" "}
+                            <span className="text-gray-400">
+                              {" "}
+                              ({coin.symbol})
+                            </span>
+                          </div>
+                        </Link>
                       </div>
                     </td>
                     <td className="text-left py-4 pl-0 pr-10  border-b border-secondary">
