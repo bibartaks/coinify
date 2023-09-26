@@ -1,16 +1,7 @@
 import Link from "next/link"
 import React from "react"
 import { montserrat, righteous } from "@/app/utilities/fonts"
-import { Button } from "../ui/button"
 import Search from "../Search/Search"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu"
 import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
 export default function Navbar() {

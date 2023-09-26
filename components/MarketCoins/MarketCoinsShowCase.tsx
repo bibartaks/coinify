@@ -2,11 +2,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from "react"
 import { Card } from "../ui/card"
-import Pagination from "../Pagination/Pagination"
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
-import priceFormator from "@/app/utilities/priceFormator"
-import Chart from "../Chart/Chart"
-import { Skeleton } from "@/components/ui/skeleton"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -18,17 +13,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { Half1Icon } from "@radix-ui/react-icons"
 import Link from "next/link"
-import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@radix-ui/react-tooltip"
+
 import { ShowCoins } from "../ShowCoins/ShowCoins"
 import { montserrat, righteous } from "@/app/utilities/fonts"
 import Loading from "./Loading/Loading"

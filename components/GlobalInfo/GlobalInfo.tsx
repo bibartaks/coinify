@@ -1,11 +1,10 @@
-import { montserrat } from "@/app/utilities/fonts"
 import React from "react"
-import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card"
+import { montserrat } from "@/app/utilities/fonts"
+import { Card } from "../ui/card"
 import globalCoinsFetcher from "@/lib/globalCoinsFetcher"
 import priceFormator from "@/app/utilities/priceFormator"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import Chart from "../Chart/Chart"
 import GlobalChart from "../GlobalChart/GlobalChart"
 
 export default async function GlobalInfo() {
@@ -13,11 +12,7 @@ export default async function GlobalInfo() {
     "https://api.coingecko.com/api/v3/global"
   )
 
-  const chartData = await globalCoinsFetcher(
-    "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=365&interval=daily"
-  )
-
-  function calculateTotalMarketCap(data) {
+  function calculateTotalMarketCap(data: Record<string, number>): string {
     let total = 0
     for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
@@ -26,6 +21,7 @@ export default async function GlobalInfo() {
     }
     return priceFormator(total)
   }
+
   return (
     <div className="max-w-[1400px] m-auto flex flex-col xl:flex-row xll:flex-row  justify-between  gap-5">
       <Card className="px-5 py-5 w-[100%]">

@@ -1,27 +1,15 @@
 "use client"
 
 import React from "react"
-import { Button } from "@/components/ui/button"
-
 import {
   Menubar,
-  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
-  MenubarSeparator,
-  MenubarShortcut,
-  MenubarSub,
-  MenubarSubContent,
-  MenubarSubTrigger,
   MenubarTrigger,
 } from "@/components/ui/menubar"
-import { HamburgerMenuIcon } from "@radix-ui/react-icons"
 import { montserrat } from "@/app/utilities/fonts"
 import Link from "next/link"
-import Search from "../Search/Search"
 
 export default function MobileNavbar() {
   return (
