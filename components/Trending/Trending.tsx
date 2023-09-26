@@ -2,17 +2,19 @@ import React from "react"
 import getTrendingCoinData from "@/lib/DataFetcher"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card } from "../ui/card"
-import styles from "./trending.module.css"
 import { montserrat } from "@/app/utilities/fonts"
 
 interface Coin {
   item: {
+    id: string
     name: string
     symbol: string
     market_cap_rank: string
     large: string
   }
 }
+
+// Nextjs use sever must watch
 
 export default async function Trending() {
   const data = await getTrendingCoinData(
@@ -27,7 +29,8 @@ export default async function Trending() {
         Trending coins in last 24 hours:
       </h3>
 
-      <Card className="w-[610px] pt-0  pb-5  overflow-hidden">
+      {/* <Card className="w-[610px] pt-0  pb-5  overflow-hidden"> */}
+      <Card className="max-w-[610px] pt-0  pb-5  overflow-hidden">
         <table className="w-[100%]  text-white">
           <thead className={` ${montserrat.className} py-5 bg-secondary`}>
             <tr>
@@ -41,8 +44,8 @@ export default async function Trending() {
           </thead>
 
           {data.coins.map((coin: Coin) => (
-            <>
-              <tbody>
+            <React.Fragment key={coin.item.id}>
+              <tbody key={coin.item.id}>
                 <tr>
                   <td
                     className={`text-left py-4 pl-5 border-b border-secondary`}
@@ -68,7 +71,7 @@ export default async function Trending() {
                   </td>
                 </tr>
               </tbody>
-            </>
+            </React.Fragment>
           ))}
         </table>
       </Card>

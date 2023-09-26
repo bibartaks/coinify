@@ -15,7 +15,7 @@ import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
 export default function Navbar() {
   return (
-    <nav className="border-b sticky top-0 px-5   backdrop-blur-2xl">
+    <nav className="border-b sticky top-0 px-5   z-10   backdrop-blur-2xl">
       <div className="max-w-[1400px] m-auto py-4 flex justify-between items-center">
         <div>
           <span
@@ -42,11 +42,6 @@ export default function Navbar() {
               <Link href="home">Contact Us</Link>
             </li>
             <li>
-              {/* <input
-                type="text"
-                className="px-4 py-1 rounded-lg"
-                placeholder="search"
-              /> */}
               <Search />
             </li>
           </ul>

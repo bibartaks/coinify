@@ -66,11 +66,7 @@ const GlobalChart = () => {
     fetchDataFromApi()
   }, [])
 
-  return (
-    <div>
-      <canvas ref={chartRef} />
-    </div>
-  )
+  return <canvas ref={chartRef} />
 }
 
 export default GlobalChart

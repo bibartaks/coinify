@@ -6,16 +6,11 @@ import styles from "./landing.module.css"
 
 export default function Landing() {
   return (
-    <header className="px-5">
-      <div className="max-w-[1400px] m-auto flex items-center justify-between py-20 ">
-        {/* <div className="h-[300px] w-[400px] bg-primary absolute z-[-1] blur-[180px] top-[35%]"></div> */}
+    <header className="px-0 lg:px-5 xl:px-5 xll:px-5 py-5">
+      <div className="max-w-[1400px] m-auto flex items-center justify-between py-20 flex-col lg:flex-row  xl:flex-row 2xl:flex-row">
         <div>
-          {/* <h1 className="text-4xl font-extrabold tracking-tight  lg:text-5xl lg:leading-[70px] mb-5">
-            Discover the World of Cryptocurrencies: Empowering You to Explore
-            and Trade!
-          </h1> */}
           <h1
-            className={`${righteous.className} ${styles.landingText}  mb-5   font-black   tracking-[2px]`}
+            className={`${righteous.className} ${styles.landingText}  mb-5  font-black   tracking-[2px]`}
           >
             {" "}
             Discover the World of Cryptocurrencies: Empowering You to Explore
@@ -27,7 +22,7 @@ export default function Landing() {
         </div>
         <div>
           <Image
-            className="w-[600px]"
+            className="w-[200px] lg:w-[400px]"
             src="/eth.png"
             width={1000}
             height={1000}

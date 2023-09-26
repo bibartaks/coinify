@@ -60,7 +60,7 @@ export function ShowCoins() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <h1 className="ml-5">Show:</h1>
+      <h1 className="ml-5 hidden lg:block xl:block xll:block">Show:</h1>
       <PopoverTrigger asChild>
         <Button
           variant="outline"

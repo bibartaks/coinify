@@ -13,15 +13,14 @@ export default function Pagination() {
 
   const [page, setPage] = useState(search ? parseInt(search) : 1)
 
-  const scrollTop = () => {
-    window.scrollTo({ top: 1300, behavior: "smooth" })
-  }
+  // const scrollTop = () => {
+  //   window.scrollTo({ top: 1300, behavior: "smooth" })
+  // }
 
   useEffect(() => {
     router.push(`?page=${page}${show ? `&show=${show}` : ""}`, {
       scroll: false,
     })
-    scrollTop()
   }, [page, show, router])
 
   function nextPage() {

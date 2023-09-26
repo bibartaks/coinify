@@ -20,8 +20,8 @@ import {
 export default function Footer() {
   return (
     <footer className={`bg-secondary font-light ${montserrat.className}`}>
-      <div className="max-w-[1400px] m-auto py-4 mt-5">
-        <p>
+      <div className="max-w-[1400px] m-auto py-4 px-5 mt-5">
+        <p className="text-[0.9rem]">
           Crafted with strength 💪 and love 💗 by
           <Link
             className="ml-[-10px] text-1xl text-primary"
@@ -37,7 +37,7 @@ export default function Footer() {
                     <AvatarImage src="https://github.com/bibartaks.png" />
                     <AvatarFallback>BS</AvatarFallback>
                   </Avatar>
-                  <div className="space-y-1 ">
+                  <div className="space-y-1">
                     <h4 className="text-sm font-semibold">@bibartaks</h4>
                     <p className="text-sm">
                       Frontend Developer | ✨ Turning Design Dreams into

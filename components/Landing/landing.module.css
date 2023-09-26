@@ -14,6 +14,12 @@
   font: bold;
 }
 
+@media only screen and (max-width: 1200px) {
+  .landingText {
+    font-size: 2rem;
+  }
+}
+
 .landingBtn {
   display: inline-block;
   padding: 0.6rem 2rem;
