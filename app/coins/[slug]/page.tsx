@@ -7,6 +7,15 @@ import React from "react"
 import priceFormator from "@/app/utilities/priceFormator"
 import Link from "next/link"
 import sanitizeHtml from "sanitize-html"
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 export default async function page({ params }: { params: { slug: string } }) {
   let { slug } = params
@@ -92,6 +101,7 @@ export default async function page({ params }: { params: { slug: string } }) {
               <h4 className="mb-1"> Fully Diluted Valuation: </h4>
               <h4 className="mb-1"> Market cap: </h4>
               <h4 className="mb-1">Max supply: </h4>
+              <h4 className="mb-1">Circulating supply: </h4>
             </div>
             <div>
               <h4 className="mb-1">
@@ -114,8 +124,49 @@ export default async function page({ params }: { params: { slug: string } }) {
               <h4 className="mb-1">
                 {priceFormator(data.market_data.max_supply)}
               </h4>
+              <h4>{priceFormator(data.market_data.circulating_supply)}</h4>
             </div>
           </div>
+
+          <Card className="max-w-[40%] overflow-hidden mt-5">
+            <Table className="max-w-[100%] h-[100%]">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="border-r text-center">1h</TableHead>
+                  <TableHead className="border-r text-center">24h</TableHead>
+                  <TableHead className="border-r text-center">7d</TableHead>
+                  <TableHead className="border-r text-center">14d</TableHead>
+                  <TableHead className="border-r text-center">30d</TableHead>
+                  <TableHead className="border-l text-center">1y</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="border-r text-center">
+                    {data.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
+                      1
+                    )}
+                    %
+                  </TableCell>
+                  <TableCell className="border-r text-center">
+                    {data.market_data.price_change_percentage_24h.toFixed(1)}
+                  </TableCell>
+                  <TableCell className="border-r text-center">
+                    {data.market_data.price_change_percentage_7d.toFixed(1)}
+                  </TableCell>
+                  <TableCell className="border-r text-center">
+                    {data.market_data.price_change_percentage_14d.toFixed(1)}
+                  </TableCell>
+                  <TableCell className="border-r text-center">
+                    {data.market_data.price_change_percentage_30d.toFixed(1)}
+                  </TableCell>
+                  <TableCell className="border-l text-center">
+                    {data.market_data.price_change_percentage_1y.toFixed(1)}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </Card>
         </Card>
       </div>
     </div>
