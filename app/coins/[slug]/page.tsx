@@ -71,13 +71,51 @@ export default async function page({ params }: { params: { slug: string } }) {
             </Link>
           </h3>
         </Card>
-        <Card className="px-5 py-5  w-min">
+        <Card className="px-5 py-5 w-min mb-5">
           <h1 className={` ${montserrat.className} text-2xl mb-5`}>
             {data.name} converter:
           </h1>
           <CoinPriceConverter
             bitcoinPrice={data.market_data.current_price.usd}
           />
+        </Card>
+        <Card className="px-5 py-5">
+          <h1 className={`${montserrat.className} text-2xl mb-2`}>
+            BTC Price Statistics
+          </h1>
+          <div className="flex   justify-between max-w-[30%]">
+            <div>
+              <h4 className="mb-1">Bitcoin Price</h4>
+              <h4 className="mb-1">24h Low / 24h High</h4>
+              <h4 className="mb-1">Total Volume</h4>
+              <h4 className="mb-1"> Market Cap Rank </h4>
+              <h4 className="mb-1"> Fully Diluted Valuation: </h4>
+              <h4 className="mb-1"> Market cap: </h4>
+              <h4 className="mb-1">Max supply: </h4>
+            </div>
+            <div>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.current_price.usd)}
+              </h4>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.high_24h.usd)} /{" "}
+                {priceFormator(data.market_data.low_24h.usd)}
+              </h4>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.total_volume.usd)}
+              </h4>
+              <h4 className="mb-1">#{data.market_cap_rank}</h4>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.fully_diluted_valuation.usd)}
+              </h4>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.market_cap.usd)}
+              </h4>
+              <h4 className="mb-1">
+                {priceFormator(data.market_data.max_supply)}
+              </h4>
+            </div>
+          </div>
         </Card>
       </div>
     </div>
