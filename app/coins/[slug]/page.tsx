@@ -17,10 +17,24 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Share1Icon, Share2Icon } from "@radix-ui/react-icons"
+import { Badge } from "@/components/ui/badge"
+import ShareCoin from "@/components/ShareCoin/ShareCoin"
+import PriceChart from "@/components/CryptoCoinChart/CryptoCoinChart"
+
 export default async function page({ params }: { params: { slug: string } }) {
   let { slug } = params
   const data = await getTrendingCoinData(
     `https://api.coingecko.com/api/v3/coins/${slug}`
+  )
+
+  const coinChartData = await getTrendingCoinData(
+    `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30`
   )
 
   return (
@@ -33,6 +47,9 @@ export default async function page({ params }: { params: { slug: string } }) {
           <h1 className={`${montserrat.className} text-2xl mb-3`}>
             Coin Info:
           </h1>
+          <div className="mb-3">
+            <ShareCoin url="http://localhost:3000/coins/bitcoin" />
+          </div>
           <CoinImage image={data.image.large} />
           <h3 className="mb-1">
             Name: {data.name} <span>({data.symbol})</span>{" "}
@@ -142,31 +159,84 @@ export default async function page({ params }: { params: { slug: string } }) {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="border-r text-center">
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
+                        1
+                      ) > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
                     {data.market_data.price_change_percentage_1h_in_currency.usd.toFixed(
                       1
                     )}
                     %
                   </TableCell>
-                  <TableCell className="border-r text-center">
-                    {data.market_data.price_change_percentage_24h.toFixed(1)}
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_24h.toFixed(1) >
+                      0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {data.market_data.price_change_percentage_24h.toFixed(1)}%
                   </TableCell>
-                  <TableCell className="border-r text-center">
-                    {data.market_data.price_change_percentage_7d.toFixed(1)}
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_7d_in_currency.usd.toFixed(
+                        1
+                      ) > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {data.market_data.price_change_percentage_7d.toFixed(1)}%
                   </TableCell>
-                  <TableCell className="border-r text-center">
-                    {data.market_data.price_change_percentage_14d.toFixed(1)}
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_14d_in_currency.usd.toFixed(
+                        1
+                      ) > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {data.market_data.price_change_percentage_14d.toFixed(1)}%
                   </TableCell>
-                  <TableCell className="border-r text-center">
-                    {data.market_data.price_change_percentage_30d.toFixed(1)}
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_30d_in_currency.usd.toFixed(
+                        1
+                      ) > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {data.market_data.price_change_percentage_30d.toFixed(1)}%
                   </TableCell>
-                  <TableCell className="border-l text-center">
-                    {data.market_data.price_change_percentage_1y.toFixed(1)}
+                  <TableCell
+                    className={`border-r text-center ${
+                      data.market_data.price_change_percentage_1y_in_currency.usd.toFixed(
+                        1
+                      ) > 0
+                        ? "text-green-500"
+                        : "text-red-500"
+                    }`}
+                  >
+                    {data.market_data.price_change_percentage_1y.toFixed(1)}%
                   </TableCell>
                 </TableRow>
               </TableBody>
             </Table>
           </Card>
+        </Card>
+        <Card className="max-h-[100%] max-w-[500px] px-5 py-5 mb-5">
+          <h1 className={`${montserrat.className} text-2xl mb-4`}>
+            {data.name} Price Chart ({data.symbol.toLocaleUpperCase()})
+          </h1>
+          <PriceChart coinId={data.id} coinChartData={coinChartData} />
         </Card>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import Link from "next/link"
 import React from "react"
 import { montserrat, righteous } from "@/app/utilities/fonts"
-import Search from "../Search/Search"
 import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
 export default function Navbar() {
@@ -31,9 +30,6 @@ export default function Navbar() {
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
               <Link href="home">Contact Us</Link>
-            </li>
-            <li>
-              <Search />
             </li>
           </ul>
         </div>
