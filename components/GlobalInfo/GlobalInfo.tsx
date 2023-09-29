@@ -42,7 +42,7 @@ export default async function GlobalInfo() {
         </h3>
 
         {/* Mobile Info */}
-        <div className="lg:hidden xl:hidden xll:hidden">
+        <div className=" xl:hidden xll:hidden">
           <Card className="px-2 py-2 w-[100%] mb-5">
             <h3 className="text-[1rem]">💰 Total Market Capitalization:</h3>
             <div className="px-2 leading-10">

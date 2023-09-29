@@ -10,7 +10,7 @@ export default function page() {
         <h1 className={`text-3xl mb-2 ${montserrat.className}`}>
           Contact with us
         </h1>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground leading-[200%]">
           Do you have any suggestions for this project, or if you come across
           any bugs, please feel free to contact us. Your feedback is valuable to
           us.

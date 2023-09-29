@@ -3,6 +3,7 @@ import getTrendingCoinData from "@/lib/DataFetcher"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card } from "../ui/card"
 import { montserrat } from "@/app/utilities/fonts"
+import Link from "next/link"
 
 interface Coin {
   item: {
@@ -57,19 +58,24 @@ export default async function Trending() {
                   </td>
                   <td className="text-left py-4    border-b border-secondary">
                     <div className="flex items-center">
-                      <div className="mr-2">
-                        <Avatar>
-                          <AvatarImage src={coin.item.large} />
-                          <AvatarFallback>?</AvatarFallback>
-                        </Avatar>
-                      </div>
-                      <div>
-                        {coin.item.name}{" "}
-                        <span className="text-gray-400">
-                          {" "}
-                          ({coin.item.symbol})
-                        </span>
-                      </div>
+                      <Link
+                        className="flex items-center"
+                        href={`/coins/${coin.item.id}`}
+                      >
+                        <div className="mr-2">
+                          <Avatar>
+                            <AvatarImage src={coin.item.large} />
+                            <AvatarFallback>?</AvatarFallback>
+                          </Avatar>
+                        </div>
+                        <div>
+                          {coin.item.name}{" "}
+                          <span className="text-gray-400">
+                            {" "}
+                            ({coin.item.symbol})
+                          </span>
+                        </div>
+                      </Link>
                     </div>
                   </td>
                 </tr>

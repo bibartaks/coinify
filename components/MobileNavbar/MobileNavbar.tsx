@@ -55,7 +55,7 @@ export default function MobileNavbar() {
             </Link>
           </MenubarItem>
           <MenubarItem>
-            <Link className={montserrat.className} href={"/"}>
+            <Link className={montserrat.className} href={"/contact"}>
               Contact Us
             </Link>
           </MenubarItem>

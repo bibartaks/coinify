@@ -29,7 +29,7 @@ export default function Navbar() {
               <Link href="#trending-coins">Trending Coins</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
-              <Link href="home">Contact Us</Link>
+              <Link href="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>

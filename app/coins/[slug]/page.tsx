@@ -272,7 +272,7 @@ export default async function page({ params }: { params: { slug: string } }) {
           <h1 className={`${montserrat.className} text-2xl mb-4`}>
             {data.name} Price Chart ({data.symbol.toLocaleUpperCase()})
           </h1>
-          <PriceChart coinId={data.id} coinChartData={coinChartData} />
+          <PriceChart coinId={data.id} />
         </Card>
       </div>
     </div>
