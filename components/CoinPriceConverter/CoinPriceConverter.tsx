@@ -17,7 +17,7 @@ export default function CoinPriceConverter({
         type="number"
         // value={bitcoinValue}
         placeholder="Enter your value"
-        className="px-2 py-1 mb-2"
+        className="px-2 py-1 mb-2 border border-input bg-transparent shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         onChange={e => {
           // const newValue = parseFloat(e.target.value)
           // if (!isNaN(newValue) && newValue >= 1) {

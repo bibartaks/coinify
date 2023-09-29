@@ -16,14 +16,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
-import { Share1Icon, Share2Icon } from "@radix-ui/react-icons"
-import { Badge } from "@/components/ui/badge"
 import ShareCoin from "@/components/ShareCoin/ShareCoin"
 import PriceChart from "@/components/CryptoCoinChart/CryptoCoinChart"
 
@@ -38,25 +30,32 @@ export default async function page({ params }: { params: { slug: string } }) {
   )
 
   return (
-    <div className={`min-h-[100vh]`}>
+    <div className={`min-h-[100vh] px-5`}>
       <div className="max-w-[1400px] m-auto py-10">
         <h1 className={`${montserrat.className} text-3xl mb-5`}>
           Coin Summary:
         </h1>
-        <Card className="px-5 py-5 mb-5">
-          <h1 className={`${montserrat.className} text-2xl mb-3`}>
+        <Card className="px-5 py-5 mb-5 ">
+          <h1 className={`${montserrat.className}  text-2xl mb-3`}>
             Coin Info: <ShareCoin url="http://localhost:3000/coins/bitcoin" />
           </h1>
           <CoinImage image={data.image.large} />
           <h3 className="mb-1">
-            Name: {data.name} <span>({data.symbol})</span>{" "}
+            <span className="text-muted-foreground font-light"> Name:</span>{" "}
+            {data.name} <span>({data.symbol})</span>{" "}
           </h3>
           <h3 className="mb-2">
-            Current price: {priceFormator(data.market_data.current_price.usd)}
+            <span className="text-muted-foreground font-light">
+              {" "}
+              Current price:
+            </span>{" "}
+            {priceFormator(data.market_data.current_price.usd)}
           </h3>
-          <h3 className="text-1xl mb-2">Description: </h3>
+          <h3 className="text-1xl mb-2 text-muted-foreground font-light">
+            Description:{" "}
+          </h3>
           <p
-            className={`text-justify mb-5 leading-[200%]`}
+            className={`text-left lg:text-justify mb-5 leading-[200%] `}
             dangerouslySetInnerHTML={{
               __html: sanitizeHtml(data.description?.en),
             }}
@@ -65,9 +64,9 @@ export default async function page({ params }: { params: { slug: string } }) {
             Social Info:
           </h1>
           {data.links.homepage[0] && (
-            <h3 className="mb-1">
-              Website:{" "}
-              <Link href={data.links.homepage[0]} className="text-[#ff02cc]">
+            <h3 className="mb-1 text-">
+              <span className=" text-muted-foreground">Website: </span>
+              <Link href={data.links.homepage[0]} className="text-primary">
                 {" "}
                 {data.links.homepage[0]}
               </Link>
@@ -75,10 +74,10 @@ export default async function page({ params }: { params: { slug: string } }) {
           )}
           {data.links.official_forum_url[0] && (
             <h3 className="mb-1">
-              Officle forum:{" "}
+              <span className=" text-muted-foreground">Officle forum: </span>
               <Link
                 href={data.links.official_forum_url[0]}
-                className="text-[#ff02cc]"
+                className="text-primary"
               >
                 {" "}
                 {data.links.official_forum_url[0]}
@@ -88,11 +87,11 @@ export default async function page({ params }: { params: { slug: string } }) {
 
           {data.links.twitter_screen_name && (
             <h3 className="mb-1">
-              Twitter:{" "}
+              <span className=" text-muted-foreground">Twitter: </span>
               <Link
                 target="_blank"
                 href={`https://twitter.com/${data.links.twitter_screen_name}`}
-                className="text-[#ff02cc]"
+                className="text-primary"
               >
                 https://twitter.com/{data.links.twitter_screen_name}
               </Link>
@@ -100,11 +99,11 @@ export default async function page({ params }: { params: { slug: string } }) {
           )}
           {data.links.facebook_username && (
             <h3>
-              Facebook:{" "}
+              <span className="text-muted-foreground">Facebook: </span>
               <Link
                 target="_blank"
                 href={`twitter.com/${data.links.facebook_username}`}
-                className="text-[#ff02cc]"
+                className="text-primary"
               >
                 https://facebook.com/{data.links.facebook_username}
               </Link>
@@ -123,47 +122,66 @@ export default async function page({ params }: { params: { slug: string } }) {
           <h1 className={`${montserrat.className} text-2xl mb-2`}>
             BTC Price Statistics
           </h1>
-          <div className="flex   justify-between max-w-[30%]">
-            <div>
-              <h4 className="mb-1">Bitcoin Price</h4>
-              <h4 className="mb-1">24h Low / 24h High</h4>
-              <h4 className="mb-1">Total Volume</h4>
-              <h4 className="mb-1"> Market Cap Rank </h4>
-              <h4 className="mb-1"> Fully Diluted Valuation: </h4>
-              <h4 className="mb-1"> Market cap: </h4>
-              <h4 className="mb-1">Max supply: </h4>
-              <h4 className="mb-1">Circulating supply: </h4>
+          <div className="flex justify-between max-w-[100%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] xll:max-w-[20%]  mt-5">
+            <div className="">
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                Bitcoin Price
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                24h Low / 24h High
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                Total Volume
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                {" "}
+                Market Cap Rank{" "}
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                {" "}
+                Fully Diluted Valuation{" "}
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                {" "}
+                Market cap{" "}
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                Max supply{" "}
+              </h4>
+              <h4 className="mb-5 text-muted-foreground text-sm">
+                Circulating supply:{" "}
+              </h4>
             </div>
-            <div>
-              <h4 className="mb-1">
+            <div className="">
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.current_price.usd)}
               </h4>
-              <h4 className="mb-1">
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.high_24h.usd)} /{" "}
                 {priceFormator(data.market_data.low_24h.usd)}
               </h4>
-              <h4 className="mb-1">
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.total_volume.usd)}
               </h4>
-              <h4 className="mb-1">#{data.market_cap_rank}</h4>
-              <h4 className="mb-1">
+              <h4 className="mb-5 text-sm">#{data.market_cap_rank}</h4>
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.fully_diluted_valuation.usd)}
               </h4>
-              <h4 className="mb-1">
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.market_cap.usd)}
               </h4>
-              <h4 className="mb-1">
+              <h4 className="mb-5 text-sm">
                 {priceFormator(data.market_data.max_supply)}
               </h4>
               <h4>{priceFormator(data.market_data.circulating_supply)}</h4>
             </div>
           </div>
 
-          <Card className="max-w-[40%] overflow-hidden mt-5">
+          <Card className="max-w-[100%] overflow-hidden mt-10">
             <Table className="max-w-[100%] h-[100%]">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="border-r text-center">1h</TableHead>
+                  <TableHead className="border-r text-center ">1h</TableHead>
                   <TableHead className="border-r text-center">24h</TableHead>
                   <TableHead className="border-r text-center">7d</TableHead>
                   <TableHead className="border-r text-center">14d</TableHead>

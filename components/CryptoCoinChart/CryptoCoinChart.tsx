@@ -30,11 +30,12 @@ export default function CryptoChart({ coinId, coinChartData }: any) {
               {
                 label: "Price",
                 data: values,
-                borderColor: "rgba(75, 192, 192, 1)",
+                // borderColor: "rgba(75, 192, 192, 1)",
+                borderColor: "rgb(59, 130, 246)",
                 borderWidth: 2,
                 fill: true,
                 backgroundColor: "rgba(75, 192, 192, 0.2)", // Background color
-                pointRadius: 0,
+                // pointRadius: 0,
               },
             ],
           },
