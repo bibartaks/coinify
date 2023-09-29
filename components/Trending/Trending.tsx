@@ -22,7 +22,10 @@ export default async function Trending() {
   )
 
   return (
-    <div className="max-w-[1400px] m-auto py-10">
+    <div
+      className="max-w-[1400px] m-auto py-10 scroll-m-10"
+      id="trending-coins"
+    >
       <h3
         className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
       >

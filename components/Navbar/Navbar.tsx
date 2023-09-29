@@ -5,7 +5,7 @@ import MobileNavbar from "../MobileNavbar/MobileNavbar"
 
 export default function Navbar() {
   return (
-    <nav className="border-b sticky top-0 px-5   z-10   backdrop-blur-2xl">
+    <nav className="border-b    sticky top-0   px-5   z-10   backdrop-blur-2xl">
       <div className="max-w-[1400px] m-auto py-4 flex justify-between items-center">
         <div>
           <span
@@ -20,13 +20,13 @@ export default function Navbar() {
               <Link href="/">Home</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9] ">
-              <Link href="home">Global info</Link>
+              <Link href="#global-info">Global info</Link>
+            </li>
+            <li className="mr-10 hover:opacity-[0.9] scroll-smooth">
+              <Link href="#market-coins">Market</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
-              <Link href="home">Market</Link>
-            </li>
-            <li className="mr-10 hover:opacity-[0.9]">
-              <Link href="home">Trending Coins</Link>
+              <Link href="#trending-coins">Trending Coins</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9]">
               <Link href="home">Contact Us</Link>

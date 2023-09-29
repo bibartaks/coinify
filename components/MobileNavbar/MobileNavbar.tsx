@@ -40,28 +40,23 @@ export default function MobileNavbar() {
             </Link>
           </MenubarItem>
           <MenubarItem>
-            <Link className={montserrat.className} href={"/"}>
+            <Link className={montserrat.className} href={"#global-info"}>
               Global Info
             </Link>
           </MenubarItem>
           <MenubarItem>
-            <Link className={montserrat.className} href={"/"}>
+            <Link className={montserrat.className} href={"#market-section"}>
               Market
             </Link>
           </MenubarItem>
           <MenubarItem>
-            <Link className={montserrat.className} href={"/"}>
+            <Link className={montserrat.className} href={"#trending-coins"}>
               Trending Coins
             </Link>
           </MenubarItem>
           <MenubarItem>
             <Link className={montserrat.className} href={"/"}>
               Contact Us
-            </Link>
-          </MenubarItem>
-          <MenubarItem>
-            <Link className={montserrat.className} href={"/"}>
-              Search Coins
             </Link>
           </MenubarItem>
         </MenubarContent>

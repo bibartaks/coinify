@@ -35,7 +35,7 @@ export default async function page({ params }: { params: { slug: string } }) {
         <h1 className={`${montserrat.className} text-3xl mb-5`}>
           Coin Summary:
         </h1>
-        <Card className="px-5 py-5 mb-5 ">
+        <Card className="px-3 lg:px-5 xl:px-5 xll:px-5 py-5 mb-5 ">
           <h1 className={`${montserrat.className}  text-2xl mb-3`}>
             Coin Info: <ShareCoin url="http://localhost:3000/coins/bitcoin" />
           </h1>
@@ -110,7 +110,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             </h3>
           )}
         </Card>
-        <Card className="px-5 py-5 w-min mb-5">
+        <Card className="px-3 lg:px-5 xl:px-5 xll:px-5 py-5 w-min mb-5">
           <h1 className={` ${montserrat.className} text-2xl mb-5`}>
             {data.name} converter:
           </h1>
@@ -118,62 +118,66 @@ export default async function page({ params }: { params: { slug: string } }) {
             bitcoinPrice={data.market_data.current_price.usd}
           />
         </Card>
-        <Card className="px-5 py-5">
+        <Card className="px-3 lg:px-5 xl:px-5 xll:px-5 py-5">
           <h1 className={`${montserrat.className} text-2xl mb-2`}>
             BTC Price Statistics
           </h1>
           <div className="flex justify-between max-w-[100%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] xll:max-w-[20%]  mt-5">
             <div className="">
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 Bitcoin Price
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 24h Low / 24h High
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 Total Volume
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {" "}
                 Market Cap Rank{" "}
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {" "}
                 Fully Diluted Valuation{" "}
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {" "}
                 Market cap{" "}
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 Max supply{" "}
               </h4>
-              <h4 className="mb-5 text-muted-foreground text-sm">
+              <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl ">
                 Circulating supply:{" "}
               </h4>
             </div>
             <div className="">
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.current_price.usd)}
               </h4>
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.high_24h.usd)} /{" "}
                 {priceFormator(data.market_data.low_24h.usd)}
               </h4>
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.total_volume.usd)}
               </h4>
-              <h4 className="mb-5 text-sm">#{data.market_cap_rank}</h4>
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
+                #{data.market_cap_rank}
+              </h4>
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.fully_diluted_valuation.usd)}
               </h4>
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.market_cap.usd)}
               </h4>
-              <h4 className="mb-5 text-sm">
+              <h4 className="mb-5 text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 {priceFormator(data.market_data.max_supply)}
               </h4>
-              <h4>{priceFormator(data.market_data.circulating_supply)}</h4>
+              <h4 className="text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
+                {priceFormator(data.market_data.circulating_supply)}
+              </h4>
             </div>
           </div>
 
@@ -264,7 +268,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             </Table>
           </Card>
         </Card>
-        <Card className="max-w-[100%] px-5 py-5 mt-5">
+        <Card className="max-w-[100%] px-3 lg:px-5 xl:px-5 xll:px-5 py-5 mt-5">
           <h1 className={`${montserrat.className} text-2xl mb-4`}>
             {data.name} Price Chart ({data.symbol.toLocaleUpperCase()})
           </h1>
@@ -274,5 +278,3 @@ export default async function page({ params }: { params: { slug: string } }) {
     </div>
   )
 }
-
-//

@@ -25,7 +25,7 @@ export default function MarketCoins() {
   )
 
   return (
-    <div id="market-section">
+    <div id="market-coins" className="scroll-m-20">
       <MarketCoinsShowCase
         data={data}
         error={error ? true : false}
