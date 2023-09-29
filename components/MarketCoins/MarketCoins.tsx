@@ -23,7 +23,6 @@ export default function MarketCoins() {
     }&page=${search}&sparkline=false&locale=en&sparkline=true`,
     fetcher
   )
-
   return (
     <div id="market-coins" className="scroll-m-20">
       <MarketCoinsShowCase

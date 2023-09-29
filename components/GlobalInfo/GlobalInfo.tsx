@@ -24,7 +24,7 @@ export default async function GlobalInfo() {
 
   return (
     <div
-      className="max-w-[1400px] m-auto flex flex-col xl:flex-row xll:flex-row  justify-between  gap-5 scroll-m-20"
+      className="max-w-[1400px] m-auto flex flex-col xl:flex-col xll:flex-row  justify-between gap-5 scroll-m-20"
       id="global-info"
     >
       <Card className="px-5 py-5 w-[100%]">
@@ -175,7 +175,7 @@ export default async function GlobalInfo() {
           </TabsContent>
         </Tabs>
       </Card>
-      <Card className="w-[100%] px-4 py-4">
+      <Card className="w-[100%]  px-4 py-4">
         <h3
           className={`scroll-m-20 text-2xl font-semibold tracking-tight mb-5 ${montserrat.className}`}
         >
