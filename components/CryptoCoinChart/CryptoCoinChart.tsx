@@ -67,8 +67,8 @@ export default function CryptoChart({ coinId, coinChartData }: any) {
   }, [coinId])
 
   return (
-    <div className="">
-      <canvas ref={chartRef} />
-    </div>
+    // <div className="">
+    <canvas ref={chartRef} />
+    // </div>
   )
 }

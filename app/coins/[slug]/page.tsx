@@ -45,16 +45,13 @@ export default async function page({ params }: { params: { slug: string } }) {
         </h1>
         <Card className="px-5 py-5 mb-5">
           <h1 className={`${montserrat.className} text-2xl mb-3`}>
-            Coin Info:
+            Coin Info: <ShareCoin url="http://localhost:3000/coins/bitcoin" />
           </h1>
-          <div className="mb-3">
-            <ShareCoin url="http://localhost:3000/coins/bitcoin" />
-          </div>
           <CoinImage image={data.image.large} />
           <h3 className="mb-1">
             Name: {data.name} <span>({data.symbol})</span>{" "}
           </h3>
-          <h3 className="mb-1">
+          <h3 className="mb-2">
             Current price: {priceFormator(data.market_data.current_price.usd)}
           </h3>
           <h3 className="text-1xl mb-2">Description: </h3>
@@ -67,35 +64,52 @@ export default async function page({ params }: { params: { slug: string } }) {
           <h1 className={`${montserrat.className} text-2xl mb-3`}>
             Social Info:
           </h1>
-          <h3 className="mb-1">
-            Website:{" "}
-            <Link href={data.links.homepage[0]}> {data.links.homepage[0]}</Link>
-          </h3>
-          <h3 className="mb-1">
-            Officle forum:{" "}
-            <Link href={data.links.official_forum_url[0]}>
-              {" "}
-              {data.links.official_forum_url[0]}
-            </Link>
-          </h3>
-          <h3 className="mb-1">
-            Twitter:{" "}
-            <Link
-              target="_blank"
-              href={`https://twitter.com/${data.links.twitter_screen_name}`}
-            >
-              {data.links.twitter_screen_name}
-            </Link>
-          </h3>
-          <h3>
-            Facebook:{" "}
-            <Link
-              target="_blank"
-              href={`twitter.com/${data.links.facebook_username}`}
-            >
-              {data.links.facebook_username}
-            </Link>
-          </h3>
+          {data.links.homepage[0] && (
+            <h3 className="mb-1">
+              Website:{" "}
+              <Link href={data.links.homepage[0]} className="text-[#ff02cc]">
+                {" "}
+                {data.links.homepage[0]}
+              </Link>
+            </h3>
+          )}
+          {data.links.official_forum_url[0] && (
+            <h3 className="mb-1">
+              Officle forum:{" "}
+              <Link
+                href={data.links.official_forum_url[0]}
+                className="text-[#ff02cc]"
+              >
+                {" "}
+                {data.links.official_forum_url[0]}
+              </Link>
+            </h3>
+          )}
+
+          {data.links.twitter_screen_name && (
+            <h3 className="mb-1">
+              Twitter:{" "}
+              <Link
+                target="_blank"
+                href={`https://twitter.com/${data.links.twitter_screen_name}`}
+                className="text-[#ff02cc]"
+              >
+                https://twitter.com/{data.links.twitter_screen_name}
+              </Link>
+            </h3>
+          )}
+          {data.links.facebook_username && (
+            <h3>
+              Facebook:{" "}
+              <Link
+                target="_blank"
+                href={`twitter.com/${data.links.facebook_username}`}
+                className="text-[#ff02cc]"
+              >
+                https://facebook.com/{data.links.facebook_username}
+              </Link>
+            </h3>
+          )}
         </Card>
         <Card className="px-5 py-5 w-min mb-5">
           <h1 className={` ${montserrat.className} text-2xl mb-5`}>
@@ -232,7 +246,7 @@ export default async function page({ params }: { params: { slug: string } }) {
             </Table>
           </Card>
         </Card>
-        <Card className="max-h-[100%] max-w-[500px] px-5 py-5 mb-5">
+        <Card className="max-w-[100%] px-5 py-5 mt-5">
           <h1 className={`${montserrat.className} text-2xl mb-4`}>
             {data.name} Price Chart ({data.symbol.toLocaleUpperCase()})
           </h1>

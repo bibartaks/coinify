@@ -9,7 +9,7 @@ import {
 import { Share1Icon, Share2Icon } from "@radix-ui/react-icons"
 import { Badge } from "@/components/ui/badge"
 
-export default function ShareCoin({ url }) {
+export default function ShareCoin({ url }: { url: string }) {
   const [copy, setCopy] = useState(false)
   function handleCopy() {
     setCopy(false)
@@ -31,7 +31,7 @@ export default function ShareCoin({ url }) {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 ml-1"
         >
           <path
             strokeLinecap="round"

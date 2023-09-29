@@ -25,12 +25,12 @@ export default function MarketCoins() {
   )
 
   return (
-    <>
+    <div id="market-section">
       <MarketCoinsShowCase
         data={data}
         error={error ? true : false}
         isLoading={isLoading ? true : false}
       />
-    </>
+    </div>
   )
 }

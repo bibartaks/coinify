@@ -6,7 +6,9 @@ import React from "react"
 export default function CoinImage({ image }: any) {
   return (
     <Avatar>
-      <AvatarImage width={32} className="mb-2" src={image} />
+      <div className="">
+        <AvatarImage width={42} className="mb-2" src={image} />
+      </div>
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   )
