@@ -40,11 +40,11 @@ export default async function page({ params }: { params: { slug: string } }) {
             Coin Info: <ShareCoin url="http://localhost:3000/coins/bitcoin" />
           </h1>
           <CoinImage image={data.image.large} />
-          <h3 className="mb-1">
+          <h3 className="mb-4 mt-5">
             <span className="text-muted-foreground font-light"> Name:</span>{" "}
             {data.name} <span>({data.symbol})</span>{" "}
           </h3>
-          <h3 className="mb-2">
+          <h3 className="mb-4">
             <span className="text-muted-foreground font-light">
               {" "}
               Current price:
