@@ -87,10 +87,6 @@ export default function MarketCoinsShowCase({ data, error, isLoading }: any) {
             </tr>
           </thead>
 
-          {/* {data?.map((coin: Coin) => (
-            <MarketCoinTableRow coin={coin} key={coin.id} />
-          ))} */}
-
           {data
             ? data?.map((coin: Coin) => (
                 <MarketCoinTableRow coin={coin} key={coin.id} />

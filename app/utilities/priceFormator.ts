@@ -7,10 +7,11 @@ export default function priceFormator(price: number) {
   })
 
   // Format the price as a currency string
-  const formattedPrice = formatter.format(price)
+  // const formattedPrice = formatter.format(price)
 
   // Remove the last two characters (the decimal point and the zeros)
-  const trimmedPrice = formattedPrice.slice(0, -3)
+  // const trimmedPrice = formattedPrice.slice(0, -3)
 
-  return trimmedPrice
+  // return trimmedPrice
+  return formatter.format(price)
 }

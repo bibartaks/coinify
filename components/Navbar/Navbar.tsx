@@ -20,7 +20,7 @@ export default function Navbar() {
               <Link href="/">Home</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9] ">
-              <Link href="#global-info">Global info</Link>
+              <Link href="/#global-info">Global info</Link>
             </li>
             <li className="mr-10 hover:opacity-[0.9] scroll-smooth">
               <Link href="#market-coins">Market</Link>

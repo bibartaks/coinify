@@ -49,24 +49,40 @@ function MarketCoinTableRow({ coin }: any) {
           {priceFormator(coin.current_price)}
         </td>
         <td className="text-left py-4 pl-0 border-b  border-secondary">
-          <span
-            className={
-              coin.price_change_percentage_24h.toFixed(1) > 0
-                ? "text-green-500 mr-5"
-                : "text-red-500 mr-5"
-            }
-          >
-            {coin.price_change_percentage_24h.toFixed(1)}%
-          </span>
+          {coin.price_change_percentage_24h ? (
+            <span
+              className={
+                coin.price_change_percentage_24h.toFixed(1) > 0
+                  ? "text-green-500 mr-5"
+                  : "text-red-500 mr-5"
+              }
+            >
+              {coin.price_change_percentage_24h.toFixed(1)}%
+            </span>
+          ) : (
+            <span>undifined</span>
+          )}
         </td>
         <td className="text-left py-5 px-10 lg:px-0 xl:px-0 xll:px-0 pl-0  border-b border-secondary">
-          {priceFormator(coin.market_cap)}
+          {coin.market_cap ? (
+            priceFormator(coin.market_cap)
+          ) : (
+            <span>undifined</span>
+          )}
         </td>
         <td className="text-left py-4 pl-0 px-10 lg:px-0 xl:px-0 xll:px-0  border-b border-secondary">
-          {priceFormator(coin.total_volume)}
+          {coin.total_volume ? (
+            priceFormator(coin.total_volume)
+          ) : (
+            <span>undifined</span>
+          )}
         </td>
         <td className="hidden text-left py-4 border-b border-secondary">
-          {priceFormator(coin.market_cap)}
+          {coin.market_cap ? (
+            priceFormator(coin.market_cap)
+          ) : (
+            <span>undifined</span>
+          )}
         </td>
         <td className="text-left py-4  pr-5 lg:pr-0 xl:pr-0 xll:pr-0   border-b border-secondary">
           <div className="w-[100px]">
