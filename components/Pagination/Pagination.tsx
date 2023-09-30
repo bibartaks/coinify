@@ -35,7 +35,12 @@ export default function Pagination() {
 
   return (
     <>
-      <Button variant="outline" className="mr-5" onClick={prevPage}>
+      <Button
+        variant="outline"
+        className="mr-5"
+        onClick={prevPage}
+        aria-label="Previous Page"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -52,7 +57,7 @@ export default function Pagination() {
         </svg>
       </Button>
       <span className="mr-5">Page: {page}</span>
-      <Button variant="outline" onClick={nextPage}>
+      <Button variant="outline" onClick={nextPage} aria-label="Next Page">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill=""

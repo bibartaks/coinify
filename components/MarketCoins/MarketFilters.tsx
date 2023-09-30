@@ -25,7 +25,11 @@ export default function MarketFilters() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button variant="default" className="ml-5">
+              <Button
+                variant="default"
+                className="ml-5"
+                aria-label="Relode the page"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

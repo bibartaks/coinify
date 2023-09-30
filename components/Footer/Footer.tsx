@@ -29,7 +29,7 @@ export default function Footer() {
           >
             <HoverCard>
               <HoverCardTrigger asChild>
-                <Button variant="link">@bibartaks</Button>
+                <Button variant="default">@bibartaks</Button>
               </HoverCardTrigger>
               <HoverCardContent className="w-80">
                 <div className="flex justify-between space-x-4">

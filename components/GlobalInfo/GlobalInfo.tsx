@@ -46,32 +46,36 @@ export default async function GlobalInfo() {
           <Card className="px-2 py-2 w-[100%] mb-5">
             <h3 className="text-[1rem]">💰 Total Market Capitalization:</h3>
             <div className="px-2 leading-10">
-              <li className="text-[0.9rem]">
-                {" "}
-                USD {calculateTotalMarketCap(data.data.total_market_cap)}
-              </li>
-              <li className="text-[0.9rem]">
-                Bitcoin (BTC) {priceFormator(data.data.total_market_cap.btc)}
-              </li>
-              <li className="text-[0.9rem]">
-                {" "}
-                Ethereum (ETH) {priceFormator(data.data.total_market_cap.eth)}
-              </li>
+              <ul>
+                <li className="text-[0.9rem]">
+                  {" "}
+                  USD {calculateTotalMarketCap(data.data.total_market_cap)}
+                </li>
+                <li className="text-[0.9rem]">
+                  Bitcoin (BTC) {priceFormator(data.data.total_market_cap.btc)}
+                </li>
+                <li className="text-[0.9rem]">
+                  {" "}
+                  Ethereum (ETH) {priceFormator(data.data.total_market_cap.eth)}
+                </li>
+              </ul>
             </div>
           </Card>
           <Card className="px-2 py-2 w-[100%] mb-5">
             <h3 className="text-[1rem]">📊 Total 24-Hour Trading Volume:</h3>
             <div className="px-3 leading-10">
-              <li className="text-[0.9rem]">
-                USD: {calculateTotalMarketCap(data.data.total_volume)}
-              </li>
-              <li className="text-[0.9rem]">
-                Bitcoin (BTC) {priceFormator(data.data.total_volume.btc)}
-              </li>
-              <li className="text-[0.9rem]">
-                {" "}
-                Ethereum (ETH) {priceFormator(data.data.total_volume.eth)}
-              </li>
+              <ul>
+                <li className="text-[0.9rem]">
+                  USD: {calculateTotalMarketCap(data.data.total_volume)}
+                </li>
+                <li className="text-[0.9rem]">
+                  Bitcoin (BTC) {priceFormator(data.data.total_volume.btc)}
+                </li>
+                <li className="text-[0.9rem]">
+                  {" "}
+                  Ethereum (ETH) {priceFormator(data.data.total_volume.eth)}
+                </li>
+              </ul>
             </div>
           </Card>
           <Card className="px-2 py-2 w-[100%]">
@@ -92,6 +96,9 @@ export default async function GlobalInfo() {
                 <Progress
                   value={data.data.market_cap_percentage[coin].toFixed(2)}
                   className="w-[50%] "
+                  aria-label={`${coin} Market Cap Percentage: ${data.data.market_cap_percentage[
+                    coin
+                  ].toFixed(2)}%`}
                 />
               </div>
             ))}
@@ -118,17 +125,21 @@ export default async function GlobalInfo() {
             <Card className="px-2 py-2 w-[600px]">
               <h3 className="text-[1.2rem]">💰 Total Market Capitalization:</h3>
               <div className="px-2 leading-10">
-                <li>
-                  {" "}
-                  USD {calculateTotalMarketCap(data.data.total_market_cap)}
-                </li>
-                <li>
-                  Bitcoin (BTC) {priceFormator(data.data.total_market_cap.btc)}
-                </li>
-                <li>
-                  {" "}
-                  Ethereum (ETH) {priceFormator(data.data.total_market_cap.eth)}
-                </li>
+                <ul>
+                  <li>
+                    {" "}
+                    USD {calculateTotalMarketCap(data.data.total_market_cap)}
+                  </li>
+                  <li>
+                    Bitcoin (BTC){" "}
+                    {priceFormator(data.data.total_market_cap.btc)}
+                  </li>
+                  <li>
+                    {" "}
+                    Ethereum (ETH){" "}
+                    {priceFormator(data.data.total_market_cap.eth)}
+                  </li>
+                </ul>
               </div>
             </Card>
           </TabsContent>
@@ -138,14 +149,18 @@ export default async function GlobalInfo() {
                 📊 Total 24-Hour Trading Volume:
               </h3>
               <div className="px-3 leading-10">
-                <li>USD: {calculateTotalMarketCap(data.data.total_volume)}</li>
-                <li>
-                  Bitcoin (BTC) {priceFormator(data.data.total_volume.btc)}
-                </li>
-                <li>
-                  {" "}
-                  Ethereum (ETH) {priceFormator(data.data.total_volume.eth)}
-                </li>
+                <ul>
+                  <li>
+                    USD: {calculateTotalMarketCap(data.data.total_volume)}
+                  </li>
+                  <li>
+                    Bitcoin (BTC) {priceFormator(data.data.total_volume.btc)}
+                  </li>
+                  <li>
+                    {" "}
+                    Ethereum (ETH) {priceFormator(data.data.total_volume.eth)}
+                  </li>
+                </ul>
               </div>
             </Card>
           </TabsContent>

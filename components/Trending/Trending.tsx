@@ -64,7 +64,10 @@ export default async function Trending() {
                       >
                         <div className="mr-2">
                           <Avatar>
-                            <AvatarImage src={coin.item.large} />
+                            <AvatarImage
+                              src={coin.item.large}
+                              alt={coin.item.name + "logo"}
+                            />
                             <AvatarFallback>?</AvatarFallback>
                           </Avatar>
                         </div>

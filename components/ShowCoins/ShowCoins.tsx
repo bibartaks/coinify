@@ -67,6 +67,7 @@ export function ShowCoins() {
           role="combobox"
           aria-expanded={open}
           className="w-[70px] justify-between ml-2"
+          aria-label="Select how many result you wanna see"
         >
           {value
             ? showItems.find(framework => framework.value === value)?.label

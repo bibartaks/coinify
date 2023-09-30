@@ -32,7 +32,11 @@ function MarketCoinTableRow({ coin }: any) {
             <Link href={`coins/${coin.id}`} className="flex items-center">
               <div className="mr-2">
                 <Avatar>
-                  <AvatarImage width={30} src={coin.image} />
+                  <AvatarImage
+                    width={30}
+                    src={coin.image}
+                    alt={coin.name + "logo"}
+                  />
                   <AvatarFallback>
                     <Skeleton className="w-[40px] h-[40px] rounded-full " />
                   </AvatarFallback>

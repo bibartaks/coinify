@@ -254,7 +254,7 @@ export default function NotFound() {
             ></path>
           </g>
         </svg>
-        <h2 className={` ${righteous.className} text-center text-2xl mb-2`}>
+        <h2 className={` ${righteous.className} text-center text-2xl mb-4`}>
           The page you're seeking can't be found.
         </h2>
         <Link href="/" className="text-center  bg-primary px-2 py-1 rounded-sm">

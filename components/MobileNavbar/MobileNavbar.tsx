@@ -15,7 +15,7 @@ export default function MobileNavbar() {
   return (
     <Menubar className={montserrat.className}>
       <MenubarMenu>
-        <MenubarTrigger>
+        <MenubarTrigger aria-label="Menubar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
