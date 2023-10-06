@@ -25,11 +25,11 @@ export default function Footer() {
           Crafted with strength 💪 and love 💗 by
           <Link
             className="ml-[-10px] text-1xl text-primary"
-            href="bibartaks.com"
+            href="https://bibartaks.vercel.app/"
           >
             <HoverCard>
               <HoverCardTrigger asChild>
-                <Button variant="default">@bibartaks</Button>
+                <Button variant="link">@bibartaks</Button>
               </HoverCardTrigger>
               <HoverCardContent className="w-80">
                 <div className="flex justify-between space-x-4">
@@ -46,15 +46,21 @@ export default function Footer() {
                     <div className="flex flex-wrap items-start pt-2">
                       <GitHubLogoIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
                       <span className="text-xs text-muted-foreground">
-                        <Link href="github.com/bibartask">@bibartaks</Link>
+                        <Link href="https://github.com/bibartaks">
+                          @bibartaks
+                        </Link>
                       </span>
                       <LinkedInLogoIcon className=" ml-2 mr-2 h-4 w-4 opacity-70" />{" "}
                       <span className="text-xs text-muted-foreground mr-3 mb-2">
-                        <Link href="github.com/bibartask">@bibartaks</Link>
+                        <Link href="https://www.linkedin.com/in/bibartaks/">
+                          @bibartaks
+                        </Link>
                       </span>
                       <PersonIcon className=" mr-2 h-4 w-4 opacity-70" />{" "}
                       <span className="text-xs text-muted-foreground">
-                        <Link href="github.com/bibartask">@bibartaks</Link>
+                        <Link href="https://bibartaks.vercel.app/">
+                          @bibartaks
+                        </Link>
                       </span>
                     </div>
                   </div>
