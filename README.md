@@ -1,2 +1,2 @@
 # Conify
-# A full-stack crypto platform
+## A full-stack crypto platform
