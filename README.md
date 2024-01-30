@@ -33,6 +33,8 @@ This project leverages the [ Coingecko API](https://www.coingecko.com/api/docume
 - TailwindCSS
 - Shadcn UI
 - D3.js
+- Swr.js
+- Sanitize-html
 
 ## Contributors
 
