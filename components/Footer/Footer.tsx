@@ -1,21 +1,19 @@
-import React from "react"
-import { montserrat, righteous } from "@/app/utilities/fonts"
-import Link from "next/link"
+import { montserrat } from "@/app/utilities/fonts";
+import Link from "next/link";
 
 import {
-  CalendarIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
   PersonIcon,
-} from "@radix-ui/react-icons"
+} from "@radix-ui/react-icons";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/components/ui/hover-card";
 
 export default function Footer() {
   return (
@@ -40,8 +38,8 @@ export default function Footer() {
                   <div className="space-y-1">
                     <h4 className="text-sm font-semibold">@bibartaks</h4>
                     <p className="text-sm">
-                      Frontend Developer | ✨ Turning Design Dreams into
-                      Pixel-Perfect Realities
+                      Full-Stack Developer | JavaScript | React.js | Next.js |
+                      Node.js | Crafting Interfaces And Robust Backends
                     </p>
                     <div className="flex flex-wrap items-start pt-2">
                       <GitHubLogoIcon className="mr-2 h-4 w-4 opacity-70" />{" "}
@@ -71,5 +69,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,33 +1,31 @@
-import { montserrat, righteous } from "@/app/utilities/fonts"
-import CoinImage from "@/components/CoinImage/CoinImage"
-import { Card } from "@/components/ui/card"
-import getTrendingCoinData from "@/lib/DataFetcher"
-import CoinPriceConverter from "@/components/CoinPriceConverter/CoinPriceConverter"
-import React from "react"
-import priceFormator from "@/app/utilities/priceFormator"
-import Link from "next/link"
-import sanitizeHtml from "sanitize-html"
+import { montserrat } from "@/app/utilities/fonts";
+import priceFormator from "@/app/utilities/priceFormator";
+import CoinImage from "@/components/CoinImage/CoinImage";
+import CoinPriceConverter from "@/components/CoinPriceConverter/CoinPriceConverter";
+import PriceChart from "@/components/CryptoCoinChart/CryptoCoinChart";
+import ShareCoin from "@/components/ShareCoin/ShareCoin";
+import { Card } from "@/components/ui/card";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import ShareCoin from "@/components/ShareCoin/ShareCoin"
-import PriceChart from "@/components/CryptoCoinChart/CryptoCoinChart"
+} from "@/components/ui/table";
+import getTrendingCoinData from "@/lib/DataFetcher";
+import Link from "next/link";
+import sanitizeHtml from "sanitize-html";
 
 export default async function page({ params }: { params: { slug: string } }) {
-  let { slug } = params
+  let { slug } = params;
   const data = await getTrendingCoinData(
     `https://api.coingecko.com/api/v3/coins/${slug}`
-  )
+  );
 
   const coinChartData = await getTrendingCoinData(
     `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30`
-  )
+  );
 
   return (
     <div className={`min-h-[100vh] px-5`}>
@@ -37,7 +35,8 @@ export default async function page({ params }: { params: { slug: string } }) {
         </h1>
         <Card className="px-3 lg:px-5 xl:px-5 xll:px-5 py-5 mb-5 ">
           <h1 className={`${montserrat.className}  text-2xl mb-3`}>
-            Coin Info: <ShareCoin url="http://localhost:3000/coins/bitcoin" />
+            Coin Info:{" "}
+            <ShareCoin url={`coinify-bibartaks.vercel.app/coins/${slug}`} />
           </h1>
           <CoinImage image={data.image.large} />
           <h3 className="mb-4 mt-5">
@@ -120,12 +119,12 @@ export default async function page({ params }: { params: { slug: string } }) {
         </Card>
         <Card className="px-3 lg:px-5 xl:px-5 xll:px-5 py-5">
           <h1 className={`${montserrat.className} text-2xl mb-2`}>
-            BTC Price Statistics
+            {data.symbol.toLocaleUpperCase()} Price Statistics
           </h1>
           <div className="flex justify-between max-w-[100%] md:max-w-[50%] lg:max-w-[40%] xl:max-w-[30%] xll:max-w-[20%]  mt-5">
             <div className="">
               <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
-                Bitcoin Price
+                {data.name} Price
               </h4>
               <h4 className="mb-5 text-muted-foreground text-sm lg:text-1xl xl:text-1xl xll:text-1xl">
                 24h Low / 24h High
@@ -276,5 +275,5 @@ export default async function page({ params }: { params: { slug: string } }) {
         </Card>
       </div>
     </div>
-  )
+  );
 }
